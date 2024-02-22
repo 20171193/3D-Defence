@@ -8,6 +8,12 @@ using UnityEngine.InputSystem;
 // Camera Movement of WorldSpace
 public class CameraController : MonoBehaviour
 {
+    [Header("Components")]
+    [SerializeField]
+    private Camera uiCamera;
+    [SerializeField]
+    private GameObject menuCanvas;
+
     [Header("Ballancing")]
     [SerializeField]
     private Vector2 mousePos;
@@ -23,6 +29,9 @@ public class CameraController : MonoBehaviour
     private float maxZoomIn;
     [SerializeField]
     private float minZoomIn;
+
+
+    private bool isOnMenu = false;
 
     private float scrResolutionX;
     private float scrResolutionY;
@@ -92,6 +101,12 @@ public class CameraController : MonoBehaviour
     }
     private void Zoom(InputValue value)
     {
+
+    }
+
+    private void OnTowerMenu(InputValue value)
+    {
+        menuCanvas.SetActive(true);
 
     }
 
